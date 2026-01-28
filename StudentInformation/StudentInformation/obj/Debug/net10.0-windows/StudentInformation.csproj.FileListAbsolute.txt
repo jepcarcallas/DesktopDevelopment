@@ -1,0 +1,16 @@
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\bin\Debug\net10.0-windows\StudentInformation.exe
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\bin\Debug\net10.0-windows\StudentInformation.deps.json
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\bin\Debug\net10.0-windows\StudentInformation.runtimeconfig.json
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\bin\Debug\net10.0-windows\StudentInformation.dll
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\bin\Debug\net10.0-windows\StudentInformation.pdb
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.Form1.resources
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.csproj.GenerateResource.cache
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.AssemblyInfoInputs.cache
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.AssemblyInfo.cs
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.csproj.CoreCompileInputs.cache
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.dll
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\refint\StudentInformation.dll
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.pdb
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\StudentInformation.genruntimeconfig.cache
+C:\Users\carca\Desktop\DesktopDevelopment\StudentInformation\StudentInformation\obj\Debug\net10.0-windows\ref\StudentInformation.dll

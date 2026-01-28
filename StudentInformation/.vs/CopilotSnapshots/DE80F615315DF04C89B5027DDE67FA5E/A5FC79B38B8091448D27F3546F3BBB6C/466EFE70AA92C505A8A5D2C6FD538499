@@ -1,0 +1,334 @@
+﻿namespace StudentInformation
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.PictureBox pictureBoxProfile;
+        private System.Windows.Forms.Label labelFirstName;
+        private System.Windows.Forms.TextBox fieldFirstName;
+        private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.TextBox fieldLastName;
+        private System.Windows.Forms.Label labelBirthDate;
+        private System.Windows.Forms.DateTimePicker fieldBirthDate;
+        private System.Windows.Forms.Label labelAge;
+        private System.Windows.Forms.TextBox fieldAge;
+        private System.Windows.Forms.Label labelSex;
+        private System.Windows.Forms.RadioButton radioMale;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.Label labelProgram;
+        private System.Windows.Forms.ComboBox fieldProgram;
+        private System.Windows.Forms.GroupBox groupHobbies;
+        private System.Windows.Forms.CheckBox hobbyReading;
+        private System.Windows.Forms.CheckBox hobbyWatching;
+        private System.Windows.Forms.CheckBox hobbyGaming;
+        private System.Windows.Forms.CheckBox hobbyFishing;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridView dataGridStudents;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.fieldFirstName = new System.Windows.Forms.TextBox();
+            this.labelLastName = new System.Windows.Forms.Label();
+            this.fieldLastName = new System.Windows.Forms.TextBox();
+            this.labelBirthDate = new System.Windows.Forms.Label();
+            this.fieldBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.fieldAge = new System.Windows.Forms.TextBox();
+            this.labelSex = new System.Windows.Forms.Label();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
+            this.labelProgram = new System.Windows.Forms.Label();
+            this.fieldProgram = new System.Windows.Forms.ComboBox();
+            this.groupHobbies = new System.Windows.Forms.GroupBox();
+            this.hobbyReading = new System.Windows.Forms.CheckBox();
+            this.hobbyWatching = new System.Windows.Forms.CheckBox();
+            this.hobbyGaming = new System.Windows.Forms.CheckBox();
+            this.hobbyFishing = new System.Windows.Forms.CheckBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.dataGridStudents = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
+            this.groupHobbies.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // Form
+            // 
+            this.ClientSize = new System.Drawing.Size(900, 560);
+            this.Text = "Student Information";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            // 
+            // pictureBoxProfile
+            // 
+            this.pictureBoxProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProfile.Location = new System.Drawing.Point(16, 16);
+            this.pictureBoxProfile.Name = "pictureBoxProfile";
+            this.pictureBoxProfile.Size = new System.Drawing.Size(200, 220);
+            this.pictureBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxProfile.TabIndex = 0;
+            this.pictureBoxProfile.TabStop = false;
+            // 
+            // labelFirstName
+            // 
+            this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Location = new System.Drawing.Point(240, 20);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(70, 15);
+            this.labelFirstName.Text = "First Name";
+            // 
+            // fieldFirstName
+            // 
+            this.fieldFirstName.Location = new System.Drawing.Point(320, 16);
+            this.fieldFirstName.Name = "fieldFirstName";
+            this.fieldFirstName.Size = new System.Drawing.Size(220, 23);
+            this.fieldFirstName.TabIndex = 1;
+            // 
+            // labelLastName
+            // 
+            this.labelLastName.AutoSize = true;
+            this.labelLastName.Location = new System.Drawing.Point(560, 20);
+            this.labelLastName.Name = "labelLastName";
+            this.labelLastName.Size = new System.Drawing.Size(69, 15);
+            this.labelLastName.Text = "Last Name";
+            // 
+            // fieldLastName
+            // 
+            this.fieldLastName.Location = new System.Drawing.Point(640, 16);
+            this.fieldLastName.Name = "fieldLastName";
+            this.fieldLastName.Size = new System.Drawing.Size(220, 23);
+            this.fieldLastName.TabIndex = 2;
+            // 
+            // labelBirthDate
+            // 
+            this.labelBirthDate.AutoSize = true;
+            this.labelBirthDate.Location = new System.Drawing.Point(240, 60);
+            this.labelBirthDate.Name = "labelBirthDate";
+            this.labelBirthDate.Size = new System.Drawing.Size(58, 15);
+            this.labelBirthDate.Text = "Birth Date";
+            // 
+            // fieldBirthDate
+            // 
+            this.fieldBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.fieldBirthDate.Location = new System.Drawing.Point(320, 56);
+            this.fieldBirthDate.Name = "fieldBirthDate";
+            this.fieldBirthDate.Size = new System.Drawing.Size(220, 23);
+            this.fieldBirthDate.TabIndex = 3;
+            // 
+            // labelAge
+            // 
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(560, 60);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(28, 15);
+            this.labelAge.Text = "Age";
+            // 
+            // fieldAge
+            // 
+            this.fieldAge.Location = new System.Drawing.Point(640, 56);
+            this.fieldAge.Name = "fieldAge";
+            this.fieldAge.ReadOnly = true;
+            this.fieldAge.Size = new System.Drawing.Size(60, 23);
+            this.fieldAge.TabIndex = 4;
+            // 
+            // labelSex
+            // 
+            this.labelSex.AutoSize = true;
+            this.labelSex.Location = new System.Drawing.Point(240, 100);
+            this.labelSex.Name = "labelSex";
+            this.labelSex.Size = new System.Drawing.Size(27, 15);
+            this.labelSex.Text = "Sex";
+            // 
+            // radioMale
+            // 
+            this.radioMale.AutoSize = true;
+            this.radioMale.Location = new System.Drawing.Point(320, 98);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(51, 19);
+            this.radioMale.TabIndex = 5;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Male";
+            this.radioMale.UseVisualStyleBackColor = true;
+            // 
+            // radioFemale
+            // 
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Location = new System.Drawing.Point(380, 98);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(63, 19);
+            this.radioFemale.TabIndex = 6;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Female";
+            this.radioFemale.UseVisualStyleBackColor = true;
+            // 
+            // labelProgram
+            // 
+            this.labelProgram.AutoSize = true;
+            this.labelProgram.Location = new System.Drawing.Point(240, 140);
+            this.labelProgram.Name = "labelProgram";
+            this.labelProgram.Size = new System.Drawing.Size(53, 15);
+            this.labelProgram.Text = "Program";
+            // 
+            // fieldProgram
+            // 
+            this.fieldProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fieldProgram.Location = new System.Drawing.Point(320, 136);
+            this.fieldProgram.Name = "fieldProgram";
+            this.fieldProgram.Size = new System.Drawing.Size(220, 23);
+            this.fieldProgram.TabIndex = 7;
+            // 
+            // groupHobbies
+            // 
+            this.groupHobbies.Controls.Add(this.hobbyReading);
+            this.groupHobbies.Controls.Add(this.hobbyWatching);
+            this.groupHobbies.Controls.Add(this.hobbyGaming);
+            this.groupHobbies.Controls.Add(this.hobbyFishing);
+            this.groupHobbies.Location = new System.Drawing.Point(560, 56);
+            this.groupHobbies.Name = "groupHobbies";
+            this.groupHobbies.Size = new System.Drawing.Size(300, 140);
+            this.groupHobbies.TabIndex = 8;
+            this.groupHobbies.TabStop = false;
+            this.groupHobbies.Text = "What are your hobbies?";
+            // 
+            // hobbyReading
+            // 
+            this.hobbyReading.AutoSize = true;
+            this.hobbyReading.Location = new System.Drawing.Point(14, 24);
+            this.hobbyReading.Name = "hobbyReading";
+            this.hobbyReading.Size = new System.Drawing.Size(107, 19);
+            this.hobbyReading.TabIndex = 0;
+            this.hobbyReading.Text = "Reading Books";
+            this.hobbyReading.UseVisualStyleBackColor = true;
+            // 
+            // hobbyWatching
+            // 
+            this.hobbyWatching.AutoSize = true;
+            this.hobbyWatching.Location = new System.Drawing.Point(14, 52);
+            this.hobbyWatching.Name = "hobbyWatching";
+            this.hobbyWatching.Size = new System.Drawing.Size(124, 19);
+            this.hobbyWatching.TabIndex = 1;
+            this.hobbyWatching.Text = "Watching Anime";
+            this.hobbyWatching.UseVisualStyleBackColor = true;
+            // 
+            // hobbyGaming
+            // 
+            this.hobbyGaming.AutoSize = true;
+            this.hobbyGaming.Location = new System.Drawing.Point(14, 80);
+            this.hobbyGaming.Name = "hobbyGaming";
+            this.hobbyGaming.Size = new System.Drawing.Size(134, 19);
+            this.hobbyGaming.TabIndex = 2;
+            this.hobbyGaming.Text = "Playing Video Games";
+            this.hobbyGaming.UseVisualStyleBackColor = true;
+            // 
+            // hobbyFishing
+            // 
+            this.hobbyFishing.AutoSize = true;
+            this.hobbyFishing.Location = new System.Drawing.Point(14, 108);
+            this.hobbyFishing.Name = "hobbyFishing";
+            this.hobbyFishing.Size = new System.Drawing.Size(67, 19);
+            this.hobbyFishing.TabIndex = 3;
+            this.hobbyFishing.Text = "Fishing";
+            this.hobbyFishing.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(560, 210);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(180, 36);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save Student Information";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // dataGridStudents
+            // 
+            this.dataGridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridStudents.Location = new System.Drawing.Point(16, 260);
+            this.dataGridStudents.Name = "dataGridStudents";
+            this.dataGridStudents.Size = new System.Drawing.Size(860, 280);
+            this.dataGridStudents.TabIndex = 10;
+            this.dataGridStudents.AllowUserToAddRows = true;
+            // 
+            // columns
+            // 
+            var colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colName.HeaderText = "Student Name";
+            colName.Name = "colStudentName";
+            colName.Width = 220;
+
+            var colProgram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colProgram.HeaderText = "Program";
+            colProgram.Name = "colProgram";
+            colProgram.Width = 120;
+
+            var colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colSex.HeaderText = "Sex";
+            colSex.Name = "colSex";
+            colSex.Width = 80;
+
+            var colBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colBirth.HeaderText = "Birthdate";
+            colBirth.Name = "colBirthdate";
+            colBirth.Width = 180;
+
+            var colHobbies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            colHobbies.HeaderText = "Hobbies";
+            colHobbies.Name = "colHobbies";
+            colHobbies.Width = 220;
+
+            this.dataGridStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                colName, colProgram, colSex, colBirth, colHobbies
+            });
+
+            // Add controls
+            this.Controls.Add(this.pictureBoxProfile);
+            this.Controls.Add(this.labelFirstName);
+            this.Controls.Add(this.fieldFirstName);
+            this.Controls.Add(this.labelLastName);
+            this.Controls.Add(this.fieldLastName);
+            this.Controls.Add(this.labelBirthDate);
+            this.Controls.Add(this.fieldBirthDate);
+            this.Controls.Add(this.labelAge);
+            this.Controls.Add(this.fieldAge);
+            this.Controls.Add(this.labelSex);
+            this.Controls.Add(this.radioMale);
+            this.Controls.Add(this.radioFemale);
+            this.Controls.Add(this.labelProgram);
+            this.Controls.Add(this.fieldProgram);
+            this.Controls.Add(this.groupHobbies);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.dataGridStudents);
+
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
+            this.groupHobbies.ResumeLayout(false);
+            this.groupHobbies.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridStudents)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}

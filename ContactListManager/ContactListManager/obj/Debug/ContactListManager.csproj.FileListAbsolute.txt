@@ -1,0 +1,11 @@
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\bin\Debug\ContactListManager.exe.config
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\bin\Debug\ContactListManager.exe
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\bin\Debug\ContactListManager.pdb
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.csproj.AssemblyReference.cache
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.MainForm.resources
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.Properties.Resources.resources
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.csproj.GenerateResource.cache
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.csproj.CoreCompileInputs.cache
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.exe
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.pdb
+C:\Users\carca\Desktop\DesktopDevelopment\ContactListManager\ContactListManager\obj\Debug\ContactListManager.ContactPopup.resources

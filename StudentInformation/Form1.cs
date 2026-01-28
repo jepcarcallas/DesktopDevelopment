@@ -1,0 +1,89 @@
+C# StudentInformation\Form1.cs
+using System;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace StudentInformation
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            // Wire up events (designer also wires some; kept explicit here for clarity)
+            fieldBirthDate.ValueChanged += FieldBirthDate_ValueChanged;
+            btnSave.Click += BtnSave_Click;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Populate programs
+            fieldProgram.Items.AddRange(new object[] { "BS-IT", "BS-CS", "BS-CE", "BS-IS" });
+            fieldProgram.SelectedIndex = 0;
+
+            // Initialize age immediately
+            UpdateAgeFromBirthDate();
+        }
+
+        private void FieldBirthDate_ValueChanged(object? sender, EventArgs e)
+        {
+            UpdateAgeFromBirthDate();
+        }
+
+        private void UpdateAgeFromBirthDate()
+        {
+            DateTime birth = fieldBirthDate.Value.Date;
+            DateTime today = DateTime.Today;
+
+            int age = today.Year - birth.Year;
+            if (birth > today.AddYears(-age)) age--;
+
+            fieldAge.Text = age.ToString();
+        }
+
+        private void BtnSave_Click(object? sender, EventArgs e)
+        {
+            string firstName = fieldFirstName.Text.Trim();
+            string lastName = fieldLastName.Text.Trim();
+            string fullName = $"{firstName} {lastName}".Trim();
+
+            string sex = radioMale.Checked ? "Male" : (radioFemale.Checked ? "Female" : "Unspecified");
+
+            string program = fieldProgram.SelectedItem?.ToString() ?? string.Empty;
+            string birthdateFormatted = fieldBirthDate.Value.ToString("D"); // e.g. Thursday, September 14, 2000
+
+            var hobbies = new[]
+            {
+                hobbyReading.Checked ? "Reading Books" : null,
+                hobbyWatching.Checked ? "Watching Anime" : null,
+                hobbyGaming.Checked ? "Playing Video Games" : null,
+                hobbyFishing.Checked ? "Fishing" : null
+            }.Where(s => s != null).Select(s => s!).ToArray();
+
+            // Console output
+            Console.WriteLine("Hello World");
+            Console.WriteLine($"Full Name: {fullName}");
+            Console.WriteLine($"Birthdate: {birthdateFormatted}");
+            Console.WriteLine($"Age: {fieldAge.Text}");
+            Console.WriteLine($"Sex: {sex}");
+            Console.WriteLine($"Program: {program}");
+            Console.WriteLine($"Hobbies: {string.Join(",", hobbies)}");
+
+            // Append to DataGridView (if present)
+            if (dataGridStudents != null)
+            {
+                dataGridStudents.Rows.Add(
+                    fullName,
+                    program,
+                    sex,
+                    birthdateFormatted,
+                    string.Join(",", hobbies)
+                );
+            }
+
+            // Optional: brief confirmation
+            MessageBox.Show("Student information saved to console (and grid).", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}
