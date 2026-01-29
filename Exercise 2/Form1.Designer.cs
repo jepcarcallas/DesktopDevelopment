@@ -92,7 +92,6 @@
             btnAddNewTask = new Button();
             lblTasksFor = new Label();
             tabNotes = new TabPage();
-            txtNotes = new TextBox();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -925,7 +924,6 @@
             // 
             // tabNotes
             // 
-            tabNotes.Controls.Add(txtNotes);
             tabNotes.Location = new Point(4, 26);
             tabNotes.Name = "tabNotes";
             tabNotes.Padding = new Padding(3, 3, 3, 3);
@@ -933,18 +931,6 @@
             tabNotes.TabIndex = 2;
             tabNotes.Text = "Notes";
             tabNotes.UseVisualStyleBackColor = true;
-            // 
-            // txtNotes
-            // 
-            txtNotes.Dock = DockStyle.Fill;
-            txtNotes.Font = new Font("Segoe UI", 10F);
-            txtNotes.Location = new Point(3, 3);
-            txtNotes.Margin = new Padding(3, 2, 3, 2);
-            txtNotes.Multiline = true;
-            txtNotes.Name = "txtNotes";
-            txtNotes.ScrollBars = ScrollBars.Vertical;
-            txtNotes.Size = new Size(950, 635);
-            txtNotes.TabIndex = 0;
             // 
             // Form1
             // 
@@ -1067,6 +1053,5 @@
         private Label lblUrgentLabel;
         private Label lblUrgentValue;
         private TabPage tabNotes;
-        private TextBox txtNotes;
     }
 }

@@ -41,6 +41,7 @@ namespace Exercise2
         PopulateStates();
         PopulateCountries();
         InitializeTasksDataGridView();
+        InitializeNotesTab();
         SetEditMode(false);
     }
 
@@ -78,7 +79,8 @@ namespace Exercise2
             JobTitle = "Senior Developer",
             Department = "UITO-MIS",
             Birthday = new DateTime(1987, 9, 16),
-            ImageName = "Images\\photo1.jpg"
+            ImageName = "Images\\photo1.jpg",
+            Notes = "I have to meet the team on January 23 to discuss some items with them.\n\nI need to buy birthday cake for Che's birthday this Friday."
         });
 
         contacts.Add(new Contact
@@ -97,7 +99,8 @@ namespace Exercise2
             JobTitle = "Project Manager",
             Department = "UITO-MIS",
             Birthday = new DateTime(1967, 8, 22),
-            ImageName = "Images\\photo2.jpg"
+            ImageName = "Images\\photo2.jpg",
+            Notes = "Push to repo before sleeping. Don't trust local changes.\n\nCheck timezone bug tomorrow — user is NOT wrong."
         });
 
         contacts.Add(new Contact
@@ -116,7 +119,8 @@ namespace Exercise2
             JobTitle = "Senior Developer",
             Department = "UITO-MIS",
             Birthday = new DateTime(1967, 3, 24),
-            ImageName = "Images\\photo3.jpg"
+            ImageName = "Images\\photo3.jpg",
+            Notes = "Bring charger. Laptop dies faster than my motivation.\n\nAsk if requirements changed before rewriting everything."
         });
 
         contacts.Add(new Contact
@@ -135,7 +139,8 @@ namespace Exercise2
             JobTitle = "Senior Developer",
             Department = "UITO-MIS",
             Birthday = new DateTime(1990, 7, 25),
-            ImageName = "Images\\photo4.jpg"
+            ImageName = "Images\\photo4.jpg",
+            Notes = "Stop overengineering. This is just a demo.\n\nRemember: worked on machine ≠ works on prod."
         });
 
         contacts.Add(new Contact
@@ -328,7 +333,7 @@ namespace Exercise2
         LoadTasksForContact(contact);
         
         // Load notes for the selected contact
-        txtNotes.Text = contact.Notes ?? string.Empty;
+        LoadNotesForContact(contact);
     }
 
     private void ClearContactForm()
@@ -374,11 +379,24 @@ namespace Exercise2
 
     private void btnAdd_Click(object sender, EventArgs e)
     {
-        currentContact = new Contact();
-        ClearContactForm();
-        SetEditMode(true);
-        listBoxContacts.ClearSelected();
-        txtFirstName.Focus();
+        using (AddContactForm addForm = new AddContactForm())
+        {
+            if (addForm.ShowDialog() == DialogResult.OK && addForm.NewContact != null)
+            {
+                contacts.Add(addForm.NewContact);
+                RefreshContactList();
+                
+                // Select the newly added contact
+                int index = filteredContacts.IndexOf(addForm.NewContact);
+                if (index >= 0)
+                {
+                    listBoxContacts.SelectedIndex = index;
+                }
+                
+                MessageBox.Show($"Contact '{addForm.NewContact.FullName}' has been added successfully!", 
+                    "Contact Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 
     private void btnEdit_Click(object sender, EventArgs e)
@@ -444,7 +462,7 @@ namespace Exercise2
             currentContact.JobTitle = txtJobTitle.Text.Trim();
             currentContact.Department = txtDepartment.Text.Trim();
             currentContact.Birthday = dtpBirthday.Value;
-            currentContact.Notes = txtNotes.Text.Trim();
+            // Notes are saved directly in the TextBox TextChanged event
 
             if (!contacts.Contains(currentContact))
             {
@@ -455,6 +473,433 @@ namespace Exercise2
             SetEditMode(false);
             MessageBox.Show("Contact saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+    }
+
+    private void LoadNotesForContact(Contact contact)
+    {
+        // Clear existing controls in Notes tab
+        tabNotes.Controls.Clear();
+
+        // Create main scrollable panel
+        Panel panelNotesMain = new Panel
+        {
+            Dock = DockStyle.Fill,
+            AutoScroll = true,
+            BackColor = Color.White,
+            Padding = new Padding(20)
+        };
+        tabNotes.Controls.Add(panelNotesMain);
+
+        int yPosition = 0;
+
+        // Header Panel
+        Panel headerPanel = new Panel
+        {
+            Width = panelNotesMain.ClientSize.Width - 40,
+            Height = 60,
+            Location = new Point(0, yPosition),
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+        };
+
+        Label lblNotesHeader = new Label
+        {
+            Text = $"Notes for {contact.FullName}",
+            Font = new Font("Segoe UI", 16, FontStyle.Bold),
+            Location = new Point(0, 15),
+            AutoSize = true
+        };
+        headerPanel.Controls.Add(lblNotesHeader);
+
+        Button btnAddNote = new Button
+        {
+            Text = "+ Add New Note",
+            Size = new Size(150, 35),
+            Location = new Point(headerPanel.Width - 160, 12),
+            Font = new Font("Segoe UI", 10),
+            BackColor = Color.FromArgb(0, 120, 215),
+            ForeColor = Color.White,
+            FlatStyle = FlatStyle.Flat,
+            Cursor = Cursors.Hand,
+            Anchor = AnchorStyles.Top | AnchorStyles.Right
+        };
+        btnAddNote.FlatAppearance.BorderSize = 0;
+        btnAddNote.Click += (s, e) => BtnAddNote_Click(contact);
+        headerPanel.Controls.Add(btnAddNote);
+
+        panelNotesMain.Controls.Add(headerPanel);
+        yPosition += 75;
+
+        // Quick Notes Section
+        Label lblQuickNotes = new Label
+        {
+            Text = "Quick Notes",
+            Font = new Font("Segoe UI", 14, FontStyle.Bold),
+            Location = new Point(0, yPosition),
+            AutoSize = true,
+            Anchor = AnchorStyles.Top | AnchorStyles.Left
+        };
+        panelNotesMain.Controls.Add(lblQuickNotes);
+        yPosition += 35;
+
+        Panel quickNotesPanel = new Panel
+        {
+            Width = panelNotesMain.ClientSize.Width - 40,
+            Height = 130,
+            Location = new Point(0, yPosition),
+            BackColor = Color.FromArgb(250, 250, 250),
+            BorderStyle = BorderStyle.FixedSingle,
+            Padding = new Padding(15),
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+        };
+
+        TextBox txtQuickNotes = new TextBox
+        {
+            Width = quickNotesPanel.Width - 30,
+            Height = 100,
+            Multiline = true,
+            Font = new Font("Segoe UI", 10),
+            Location = new Point(15, 15),
+            BorderStyle = BorderStyle.None,
+            BackColor = Color.FromArgb(250, 250, 250),
+            Text = contact.Notes ?? string.Empty,
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom,
+            ScrollBars = ScrollBars.Vertical
+        };
+        txtQuickNotes.TextChanged += (s, e) => { if (currentContact != null) currentContact.Notes = txtQuickNotes.Text; };
+        quickNotesPanel.Controls.Add(txtQuickNotes);
+
+        panelNotesMain.Controls.Add(quickNotesPanel);
+        yPosition += 150;
+
+        // Meeting Notes Section
+        Label lblMeetingNotes = new Label
+        {
+            Text = "Meeting Notes",
+            Font = new Font("Segoe UI", 14, FontStyle.Bold),
+            Location = new Point(0, yPosition),
+            AutoSize = true,
+            Anchor = AnchorStyles.Top | AnchorStyles.Left
+        };
+        panelNotesMain.Controls.Add(lblMeetingNotes);
+        yPosition += 35;
+
+        Panel meetingNotesPanel = new Panel
+        {
+            Width = panelNotesMain.ClientSize.Width - 40,
+            Height = 180,
+            Location = new Point(0, yPosition),
+            BackColor = Color.FromArgb(250, 250, 250),
+            BorderStyle = BorderStyle.FixedSingle,
+            Padding = new Padding(15),
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+        };
+
+        // Sample meeting note entry
+        Label lblMeetingTitle = new Label
+        {
+            Text = "Initial Contact - Jan 5, 2026",
+            Font = new Font("Segoe UI", 10, FontStyle.Bold),
+            Location = new Point(15, 15),
+            AutoSize = true
+        };
+
+        Label lblMeetingContent = new Label
+        {
+            Text = "First meeting. Very professional and knowledgeable about their team's needs. Expressed interest in long-term partnership.",
+            Font = new Font("Segoe UI", 9),
+            ForeColor = Color.Gray,
+            Location = new Point(15, 40),
+            MaximumSize = new Size(meetingNotesPanel.Width - 30, 0),
+            AutoSize = true
+        };
+
+        LinkLabel linkEdit = new LinkLabel
+        {
+            Text = "Edit",
+            Font = new Font("Segoe UI", 9),
+            Location = new Point(meetingNotesPanel.Width - 50, 15),
+            AutoSize = true,
+            LinkColor = Color.FromArgb(0, 120, 215),
+            Anchor = AnchorStyles.Top | AnchorStyles.Right
+        };
+        linkEdit.LinkClicked += (s, e) => EditMeetingNote_Click(lblMeetingTitle, lblMeetingContent);
+
+        meetingNotesPanel.Controls.Add(lblMeetingTitle);
+        meetingNotesPanel.Controls.Add(linkEdit);
+        meetingNotesPanel.Controls.Add(lblMeetingContent);
+
+        panelNotesMain.Controls.Add(meetingNotesPanel);
+        yPosition += 200;
+
+        // Important Reminders Section
+        Label lblReminders = new Label
+        {
+            Text = "Important Reminders",
+            Font = new Font("Segoe UI", 14, FontStyle.Bold),
+            Location = new Point(0, yPosition),
+            AutoSize = true,
+            Anchor = AnchorStyles.Top | AnchorStyles.Left
+        };
+        panelNotesMain.Controls.Add(lblReminders);
+        yPosition += 35;
+
+        Panel remindersPanel = new Panel
+        {
+            Width = panelNotesMain.ClientSize.Width - 40,
+            Height = 160,
+            Location = new Point(0, yPosition),
+            BackColor = Color.FromArgb(250, 250, 250),
+            BorderStyle = BorderStyle.FixedSingle,
+            Padding = new Padding(15),
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+        };
+
+        // Sample reminders
+        CreateReminderEntry(remindersPanel, "Send proposal by Jan 22", "Include pricing options and implementation timeline", 15, false);
+        CreateReminderEntry(remindersPanel, "Schedule follow-up meeting", "Confirm availability for week of Jan 27", 60, false);
+        CreateReminderEntry(remindersPanel, "Send initial documentation", "Completed on Jan 12", 105, true);
+
+        panelNotesMain.Controls.Add(remindersPanel);
+    }
+
+    private void CreateReminderEntry(Panel parent, string title, string subtitle, int yPos, bool isCompleted)
+    {
+        CheckBox chkReminder = new CheckBox
+        {
+            Checked = isCompleted,
+            Location = new Point(0, yPos),
+            AutoSize = true
+        };
+
+        Label lblTitle = new Label
+        {
+            Text = title,
+            Font = new Font("Segoe UI", 10, isCompleted ? FontStyle.Strikeout : FontStyle.Bold),
+            Location = new Point(25, yPos),
+            AutoSize = true,
+            ForeColor = isCompleted ? Color.Gray : Color.Black
+        };
+
+        Label lblSubtitle = new Label
+        {
+            Text = subtitle,
+            Font = new Font("Segoe UI", 9),
+            ForeColor = Color.Gray,
+            Location = new Point(25, yPos + 22),
+            AutoSize = true
+        };
+
+        // Add CheckedChanged event handler
+        chkReminder.CheckedChanged += (s, e) =>
+        {
+            bool completed = chkReminder.Checked;
+            lblTitle.Font = new Font("Segoe UI", 10, completed ? FontStyle.Strikeout : FontStyle.Bold);
+            lblTitle.ForeColor = completed ? Color.Gray : Color.Black;
+            
+            string message = completed ? 
+                $"Reminder '{title}' marked as completed!" : 
+                $"Reminder '{title}' marked as incomplete.";
+            MessageBox.Show(message, "Reminder Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        };
+
+        parent.Controls.Add(chkReminder);
+        parent.Controls.Add(lblTitle);
+        parent.Controls.Add(lblSubtitle);
+    }
+
+    private void BtnAddNote_Click(Contact contact)
+    {
+        // Create a simple dialog to add a new meeting note
+        Form noteDialog = new Form
+        {
+            Text = "Add New Meeting Note",
+            Size = new Size(500, 350),
+            StartPosition = FormStartPosition.CenterParent,
+            FormBorderStyle = FormBorderStyle.FixedDialog,
+            MaximizeBox = false,
+            MinimizeBox = false
+        };
+
+        Label lblTitle = new Label
+        {
+            Text = "Note Title:",
+            Location = new Point(20, 20),
+            AutoSize = true,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        };
+        noteDialog.Controls.Add(lblTitle);
+
+        TextBox txtTitle = new TextBox
+        {
+            Location = new Point(20, 45),
+            Size = new Size(440, 25),
+            Font = new Font("Segoe UI", 10),
+            PlaceholderText = "e.g., Project Discussion - Jan 15, 2026"
+        };
+        noteDialog.Controls.Add(txtTitle);
+
+        Label lblContent = new Label
+        {
+            Text = "Note Content:",
+            Location = new Point(20, 85),
+            AutoSize = true,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        };
+        noteDialog.Controls.Add(lblContent);
+
+        TextBox txtContent = new TextBox
+        {
+            Location = new Point(20, 110),
+            Size = new Size(440, 120),
+            Font = new Font("Segoe UI", 10),
+            Multiline = true,
+            ScrollBars = ScrollBars.Vertical,
+            PlaceholderText = "Enter your meeting notes here..."
+        };
+        noteDialog.Controls.Add(txtContent);
+
+        Button btnSaveNote = new Button
+        {
+            Text = "Save Note",
+            Location = new Point(280, 250),
+            Size = new Size(90, 35),
+            BackColor = Color.FromArgb(0, 120, 215),
+            ForeColor = Color.White,
+            FlatStyle = FlatStyle.Flat,
+            Font = new Font("Segoe UI", 10)
+        };
+        btnSaveNote.FlatAppearance.BorderSize = 0;
+        btnSaveNote.Click += (s, e) =>
+        {
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+            {
+                MessageBox.Show("Please enter a note title.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show($"Note saved successfully!\n\nTitle: {txtTitle.Text}\nContent: {txtContent.Text}", 
+                "Note Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            noteDialog.DialogResult = DialogResult.OK;
+            noteDialog.Close();
+            
+            // Reload notes to show the new note
+            LoadNotesForContact(contact);
+        };
+        noteDialog.Controls.Add(btnSaveNote);
+
+        Button btnCancelNote = new Button
+        {
+            Text = "Cancel",
+            Location = new Point(380, 250),
+            Size = new Size(80, 35),
+            FlatStyle = FlatStyle.Flat,
+            Font = new Font("Segoe UI", 10)
+        };
+        btnCancelNote.Click += (s, e) =>
+        {
+            noteDialog.DialogResult = DialogResult.Cancel;
+            noteDialog.Close();
+        };
+        noteDialog.Controls.Add(btnCancelNote);
+
+        noteDialog.ShowDialog();
+    }
+
+    private void EditMeetingNote_Click(Label lblTitle, Label lblContent)
+    {
+        // Create a dialog to edit the meeting note
+        Form editDialog = new Form
+        {
+            Text = "Edit Meeting Note",
+            Size = new Size(500, 350),
+            StartPosition = FormStartPosition.CenterParent,
+            FormBorderStyle = FormBorderStyle.FixedDialog,
+            MaximizeBox = false,
+            MinimizeBox = false
+        };
+
+        Label lblEditTitle = new Label
+        {
+            Text = "Note Title:",
+            Location = new Point(20, 20),
+            AutoSize = true,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        };
+        editDialog.Controls.Add(lblEditTitle);
+
+        TextBox txtEditTitle = new TextBox
+        {
+            Location = new Point(20, 45),
+            Size = new Size(440, 25),
+            Font = new Font("Segoe UI", 10),
+            Text = lblTitle.Text
+        };
+        editDialog.Controls.Add(txtEditTitle);
+
+        Label lblEditContent = new Label
+        {
+            Text = "Note Content:",
+            Location = new Point(20, 85),
+            AutoSize = true,
+            Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        };
+        editDialog.Controls.Add(lblEditContent);
+
+        TextBox txtEditContent = new TextBox
+        {
+            Location = new Point(20, 110),
+            Size = new Size(440, 120),
+            Font = new Font("Segoe UI", 10),
+            Multiline = true,
+            ScrollBars = ScrollBars.Vertical,
+            Text = lblContent.Text
+        };
+        editDialog.Controls.Add(txtEditContent);
+
+        Button btnSaveEdit = new Button
+        {
+            Text = "Save",
+            Location = new Point(280, 250),
+            Size = new Size(90, 35),
+            BackColor = Color.FromArgb(0, 120, 215),
+            ForeColor = Color.White,
+            FlatStyle = FlatStyle.Flat,
+            Font = new Font("Segoe UI", 10)
+        };
+        btnSaveEdit.FlatAppearance.BorderSize = 0;
+        btnSaveEdit.Click += (s, e) =>
+        {
+            if (string.IsNullOrWhiteSpace(txtEditTitle.Text))
+            {
+                MessageBox.Show("Please enter a note title.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            lblTitle.Text = txtEditTitle.Text;
+            lblContent.Text = txtEditContent.Text;
+            
+            MessageBox.Show("Note updated successfully!", "Note Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            editDialog.DialogResult = DialogResult.OK;
+            editDialog.Close();
+        };
+        editDialog.Controls.Add(btnSaveEdit);
+
+        Button btnCancelEdit = new Button
+        {
+            Text = "Cancel",
+            Location = new Point(380, 250),
+            Size = new Size(80, 35),
+            FlatStyle = FlatStyle.Flat,
+            Font = new Font("Segoe UI", 10)
+        };
+        btnCancelEdit.Click += (s, e) =>
+        {
+            editDialog.DialogResult = DialogResult.Cancel;
+            editDialog.Close();
+        };
+        editDialog.Controls.Add(btnCancelEdit);
+
+        editDialog.ShowDialog();
     }
 
     private void btnCancel_Click(object sender, EventArgs e)
@@ -639,6 +1084,12 @@ namespace Exercise2
 
         dgvTasks.CellFormatting += DgvTasks_CellFormatting;
         dgvTasks.CellContentClick += DgvTasks_CellContentClick;
+    }
+
+    private void InitializeNotesTab()
+    {
+        // The Notes tab will be populated dynamically when a contact is selected
+        tabNotes.BackColor = Color.White;
     }
 
     private void DgvTasks_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
