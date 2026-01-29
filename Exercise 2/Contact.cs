@@ -25,7 +25,9 @@ namespace ContactsManager.models
 
         public string? ImageName { get; set; }
 
-        public List<string> tasks = new List<string>();
+        public List<Task> Tasks { get; set; } = new List<Task>();
+        
+        public string? Notes { get; set; }
 
         public string FullName => $"{FirstName} {LastName}";
     }

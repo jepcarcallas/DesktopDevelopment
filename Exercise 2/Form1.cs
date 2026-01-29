@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using ContactsManager.models;
 
 namespace Exercise2
@@ -17,10 +17,30 @@ namespace Exercise2
         LoadSampleData();
     }
 
+    private string GetImagePath(string relativePath)
+    {
+        if (string.IsNullOrEmpty(relativePath))
+            return string.Empty;
+
+        // Try relative path from application directory
+        string appPath = Path.Combine(Application.StartupPath, relativePath);
+        if (File.Exists(appPath))
+            return appPath;
+
+        // Try relative path from solution directory (for debugging)
+        string solutionPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\", relativePath);
+        solutionPath = Path.GetFullPath(solutionPath);
+        if (File.Exists(solutionPath))
+            return solutionPath;
+
+        return relativePath;
+    }
+
     private void InitializeControls()
     {
         PopulateStates();
         PopulateCountries();
+        InitializeTasksDataGridView();
         SetEditMode(false);
     }
 
@@ -44,80 +64,97 @@ namespace Exercise2
     {
         contacts.Add(new Contact
         {
-            FirstName = "Sarah",
-            LastName = "Johnson",
-            Email = "sarah.j@email.com",
-            PhoneNumber = "(555) 123-4567",
-            MobileNumber = "(555) 987-6543",
-            Address = "123 Main Street",
-            City = "Seattle",
-            State = "WA",
-            ZipCode = "98101",
-            Country = "United States",
-            Company = "Tech Solutions Inc.",
-            JobTitle = "Software Engineer",
-            Department = "Engineering",
-            Birthday = new DateTime(1990, 3, 15)
+            FirstName = "Kromyko",
+            LastName = "Cruzado",
+            Email = "kccruzado@addu.edu.ph",
+            PhoneNumber = "221 2496",
+            MobileNumber = "639276000000",
+            Address = "Solar Street, GSIS",
+            City = "Davao City",
+            State = "Alabama",
+            ZipCode = "8000",
+            Country = "Philippines",
+            Company = "Ateneo de Davao University",
+            JobTitle = "Senior Developer",
+            Department = "UITO-MIS",
+            Birthday = new DateTime(1987, 9, 16),
+            ImageName = "Images\\photo1.jpg"
         });
 
         contacts.Add(new Contact
         {
-            FirstName = "Michael",
-            LastName = "Chen",
-            Email = "m.chen@email.com",
-            PhoneNumber = "(555) 234-5678",
-            MobileNumber = "(555) 876-5432",
-            City = "San Francisco",
-            State = "CA",
-            Country = "United States"
+            FirstName = "Tetet",
+            LastName = "Te",
+            Email = "mttquindoy@addu.edu.ph",
+            PhoneNumber = "221 2497",
+            MobileNumber = "639089000000",
+            Address = "Daisy Street, El Rio Subdivision",
+            City = "Davao City",
+            State = "Wisconsin",
+            ZipCode = "8001",
+            Country = "Philippines",
+            Company = "Ateneo de Davao University",
+            JobTitle = "Project Manager",
+            Department = "UITO-MIS",
+            Birthday = new DateTime(1967, 8, 22),
+            ImageName = "Images\\photo2.jpg"
         });
 
         contacts.Add(new Contact
         {
-            FirstName = "Emily",
-            LastName = "Rodriguez",
-            Email = "emily.r@email.com",
-            PhoneNumber = "(555) 345-6789",
-            MobileNumber = "(555) 765-4321",
-            City = "Austin",
-            State = "TX",
-            Country = "United States"
+            FirstName = "John Roy",
+            LastName = "Geralde",
+            Email = "jregeralde@addu.edu.ph",
+            PhoneNumber = "221 2498",
+            MobileNumber = "639177000000",
+            Address = "Daisy Street, El Rio Subdivision",
+            City = "Davao City",
+            State = "Washington",
+            ZipCode = "8002",
+            Country = "Philippines",
+            Company = "Ateneo de Davao University",
+            JobTitle = "Senior Developer",
+            Department = "UITO-MIS",
+            Birthday = new DateTime(1967, 3, 24),
+            ImageName = "Images\\photo3.jpg"
         });
 
         contacts.Add(new Contact
         {
-            FirstName = "David",
-            LastName = "Thompson",
-            Email = "d.thompson@email.com",
-            PhoneNumber = "(555) 456-7890",
-            MobileNumber = "(555) 654-3210",
-            City = "Boston",
-            State = "MA",
-            Country = "United States"
+            FirstName = "Patrick",
+            LastName = "Paasa",
+            Email = "ppaasa@addu.edu.ph",
+            PhoneNumber = "221 2499",
+            MobileNumber = "639912000000",
+            Address = "Diho Phase 2, Subdivision",
+            City = "Davao City",
+            State = "New York",
+            ZipCode = "8003",
+            Country = "Philippines",
+            Company = "Ateneo de Davao University",
+            JobTitle = "Senior Developer",
+            Department = "UITO-MIS",
+            Birthday = new DateTime(1990, 7, 25),
+            ImageName = "Images\\photo4.jpg"
         });
 
         contacts.Add(new Contact
         {
-            FirstName = "Jessica",
-            LastName = "Williams",
-            Email = "j.williams@email.com",
-            PhoneNumber = "(555) 567-8901",
-            MobileNumber = "(555) 543-2109",
-            City = "Denver",
-            State = "CO",
-            Country = "United States"
-        });
-
-        contacts.Add(new Contact
-        {
-            FirstName = "Robert",
-            LastName = "Martinez",
-            Email = "r.martinez@email.com",
-            PhoneNumber = "(555) 678-9012",
-            MobileNumber = "(555) 432-1098",
-            City = "Miami",
-            State = "FL",
-            Country = "United States"
+            FirstName = "Ogs",
+            LastName = "Ablazo",
+            Email = "aablazo@addu.edu.ph",
+            PhoneNumber = "221 2500",
+            MobileNumber = "639178000000",
+            Address = "Ecoland Drive Matina",
+            City = "Davao City",
+            State = "Portland",
+            ZipCode = "8004",
+            Country = "Philippines",
+            Company = "Ateneo de Davao University",
+            JobTitle = "UI/UX",
+            Department = "UITO-MIS",
+            Birthday = new DateTime(1987, 5, 5),
+            ImageName = "Images\\photo5.jpg"
         });
 
         RefreshContactList();
@@ -167,25 +204,57 @@ namespace Exercise2
         int padding = 10;
         int imageSize = 40;
         int imageY = e.Bounds.Top + (e.Bounds.Height - imageSize) / 2;
+        Rectangle imageRect = new Rectangle(e.Bounds.Left + padding, imageY, imageSize, imageSize);
 
-        using (SolidBrush circleBrush = new SolidBrush(Color.FromArgb(200, 200, 200)))
+        // Try to load and draw the profile image
+        bool imageDrawn = false;
+        if (!string.IsNullOrEmpty(contact.ImageName))
         {
-            e.Graphics.FillEllipse(circleBrush, e.Bounds.Left + padding, imageY, imageSize, imageSize);
+            string imagePath = GetImagePath(contact.ImageName);
+            if (File.Exists(imagePath))
+            {
+                try
+                {
+                    using (Image profileImage = Image.FromFile(imagePath))
+                    {
+                        e.Graphics.SetClip(new System.Drawing.Drawing2D.GraphicsPath());
+                        System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+                        path.AddEllipse(imageRect);
+                        e.Graphics.SetClip(path);
+                        e.Graphics.DrawImage(profileImage, imageRect);
+                        e.Graphics.ResetClip();
+                        imageDrawn = true;
+                    }
+                }
+                catch
+                {
+                    // If image loading fails, fall back to initials
+                }
+            }
         }
 
-        string initials = "";
-        if (!string.IsNullOrEmpty(contact.FirstName))
-            initials += contact.FirstName[0];
-        if (!string.IsNullOrEmpty(contact.LastName))
-            initials += contact.LastName[0];
-
-        using (Font initialsFont = new Font("Segoe UI", 14, FontStyle.Bold))
-        using (SolidBrush textBrush = new SolidBrush(Color.White))
+        // If no image was drawn, show initials
+        if (!imageDrawn)
         {
-            SizeF initialsSize = e.Graphics.MeasureString(initials, initialsFont);
-            float initialsX = e.Bounds.Left + padding + (imageSize - initialsSize.Width) / 2;
-            float initialsY = imageY + (imageSize - initialsSize.Height) / 2;
-            e.Graphics.DrawString(initials, initialsFont, textBrush, initialsX, initialsY);
+            using (SolidBrush circleBrush = new SolidBrush(Color.FromArgb(200, 200, 200)))
+            {
+                e.Graphics.FillEllipse(circleBrush, imageRect);
+            }
+
+            string initials = "";
+            if (!string.IsNullOrEmpty(contact.FirstName))
+                initials += contact.FirstName[0];
+            if (!string.IsNullOrEmpty(contact.LastName))
+                initials += contact.LastName[0];
+
+            using (Font initialsFont = new Font("Segoe UI", 14, FontStyle.Bold))
+            using (SolidBrush textBrush = new SolidBrush(Color.White))
+            {
+                SizeF initialsSize = e.Graphics.MeasureString(initials, initialsFont);
+                float initialsX = e.Bounds.Left + padding + (imageSize - initialsSize.Width) / 2;
+                float initialsY = imageY + (imageSize - initialsSize.Height) / 2;
+                e.Graphics.DrawString(initials, initialsFont, textBrush, initialsX, initialsY);
+            }
         }
 
         int textX = e.Bounds.Left + padding * 2 + imageSize + 5;
@@ -238,14 +307,28 @@ namespace Exercise2
             dtpBirthday.Value = DateTime.Today;
         }
 
-        if (!string.IsNullOrEmpty(contact.ImageName) && File.Exists(contact.ImageName))
+        if (!string.IsNullOrEmpty(contact.ImageName))
         {
-            pictureBoxProfile.Image = Image.FromFile(contact.ImageName);
+            string imagePath = GetImagePath(contact.ImageName);
+            if (File.Exists(imagePath))
+            {
+                pictureBoxProfile.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                pictureBoxProfile.Image = null;
+            }
         }
         else
         {
             pictureBoxProfile.Image = null;
         }
+
+        // Load tasks for the selected contact
+        LoadTasksForContact(contact);
+        
+        // Load notes for the selected contact
+        txtNotes.Text = contact.Notes ?? string.Empty;
     }
 
     private void ClearContactForm()
@@ -361,6 +444,7 @@ namespace Exercise2
             currentContact.JobTitle = txtJobTitle.Text.Trim();
             currentContact.Department = txtDepartment.Text.Trim();
             currentContact.Birthday = dtpBirthday.Value;
+            currentContact.Notes = txtNotes.Text.Trim();
 
             if (!contacts.Contains(currentContact))
             {
@@ -488,5 +572,194 @@ namespace Exercise2
     {
 
     }
+
+    // Task Management Methods
+    private void InitializeTasksDataGridView()
+    {
+        dgvTasks.AutoGenerateColumns = false;
+        dgvTasks.AllowUserToAddRows = false;
+        dgvTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        dgvTasks.RowHeadersVisible = false;
+        dgvTasks.BackgroundColor = Color.White;
+        dgvTasks.BorderStyle = BorderStyle.None;
+        dgvTasks.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+        dgvTasks.GridColor = Color.FromArgb(230, 230, 230);
+        dgvTasks.RowTemplate.Height = 40;
+
+        // Checkbox column for completion
+        var checkBoxColumn = new DataGridViewCheckBoxColumn
+        {
+            Name = "IsCompleted",
+            DataPropertyName = "IsCompleted",
+            HeaderText = "",
+            Width = 40
+        };
+        dgvTasks.Columns.Add(checkBoxColumn);
+
+        // Task Description column
+        var descriptionColumn = new DataGridViewTextBoxColumn
+        {
+            Name = "Description",
+            DataPropertyName = "Description",
+            HeaderText = "Task Description",
+            AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        };
+        dgvTasks.Columns.Add(descriptionColumn);
+
+        // Due Date column
+        var dueDateColumn = new DataGridViewTextBoxColumn
+        {
+            Name = "DueDate",
+            DataPropertyName = "DueDate",
+            HeaderText = "Due Date",
+            Width = 120,
+            DefaultCellStyle = new DataGridViewCellStyle { Format = "MM/dd/yyyy" }
+        };
+        dgvTasks.Columns.Add(dueDateColumn);
+
+        // Priority column (stars)
+        var priorityColumn = new DataGridViewTextBoxColumn
+        {
+            Name = "Priority",
+            DataPropertyName = "Priority",
+            HeaderText = "Priority",
+            Width = 120
+        };
+        dgvTasks.Columns.Add(priorityColumn);
+
+        // Status column
+        var statusColumn = new DataGridViewTextBoxColumn
+        {
+            Name = "Status",
+            DataPropertyName = "Status",
+            HeaderText = "Status",
+            Width = 120
+        };
+        dgvTasks.Columns.Add(statusColumn);
+
+        dgvTasks.CellFormatting += DgvTasks_CellFormatting;
+        dgvTasks.CellContentClick += DgvTasks_CellContentClick;
+    }
+
+    private void DgvTasks_CellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
+    {
+        if (dgvTasks.Columns[e.ColumnIndex].Name == "Priority" && e.Value != null)
+        {
+            int priority = (int)e.Value;
+            e.Value = new string('★', priority) + new string('☆', 5 - priority);
+            e.FormattingApplied = true;
+        }
+
+        if (dgvTasks.Columns[e.ColumnIndex].Name == "Status" && e.Value != null)
+        {
+            var status = (ContactsManager.models.TaskStatus)e.Value;
+            switch (status)
+            {
+                case ContactsManager.models.TaskStatus.Completed:
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.DarkGreen;
+                    break;
+                case ContactsManager.models.TaskStatus.InProgress:
+                    e.CellStyle.BackColor = Color.LightYellow;
+                    e.CellStyle.ForeColor = Color.DarkOrange;
+                    break;
+                case ContactsManager.models.TaskStatus.Urgent:
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.DarkRed;
+                    break;
+                case ContactsManager.models.TaskStatus.NotStarted:
+                    e.CellStyle.BackColor = Color.LightGray;
+                    e.CellStyle.ForeColor = Color.Gray;
+                    break;
+            }
+        }
+
+        // Strike through completed tasks
+        if (dgvTasks.Columns[e.ColumnIndex].Name == "Description")
+        {
+            var row = dgvTasks.Rows[e.RowIndex];
+            if (row.Cells["IsCompleted"].Value is bool isCompleted && isCompleted)
+            {
+                e.CellStyle.Font = new Font(dgvTasks.Font, FontStyle.Strikeout);
+                e.CellStyle.ForeColor = Color.Gray;
+            }
+        }
+    }
+
+    private void DgvTasks_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+    {
+        if (e.ColumnIndex == 0 && e.RowIndex >= 0) // Checkbox column clicked
+        {
+            dgvTasks.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            UpdateTaskStatistics();
+        }
+    }
+
+    private void LoadTasksForContact(Contact contact)
+    {
+        if (contact == null) return;
+
+        lblTasksFor.Text = $"Tasks for {contact.FullName}";
+        dgvTasks.DataSource = null;
+        dgvTasks.DataSource = contact.Tasks;
+        UpdateTaskStatistics();
+    }
+
+    private void UpdateTaskStatistics()
+    {
+        if (currentContact == null)
+        {
+            lblTotalTasksValue.Text = "0";
+            lblCompletedValue.Text = "0";
+            lblInProgressValue.Text = "0";
+            lblUrgentValue.Text = "0";
+            return;
+        }
+
+        var tasks = currentContact.Tasks;
+        lblTotalTasksValue.Text = tasks.Count.ToString();
+        lblCompletedValue.Text = tasks.Count(t => t.Status == ContactsManager.models.TaskStatus.Completed).ToString();
+        lblInProgressValue.Text = tasks.Count(t => t.Status == ContactsManager.models.TaskStatus.InProgress).ToString();
+        lblUrgentValue.Text = tasks.Count(t => t.Status == ContactsManager.models.TaskStatus.Urgent).ToString();
+    }
+
+    private void btnAddNewTask_Click(object sender, EventArgs e)
+    {
+        // Check if a contact is selected
+        if (currentContact == null)
+        {
+            MessageBox.Show("Please select a contact first to add a task.", 
+                "No Contact Selected", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information);
+            return;
+        }
+
+        // Open the task form dialog
+        using (TaskForm taskForm = new TaskForm())
+        {
+            if (taskForm.ShowDialog() == DialogResult.OK)
+            {
+                // Generate a new ID for the task
+                int newId = currentContact.Tasks.Any() 
+                    ? currentContact.Tasks.Max(t => t.Id) + 1 
+                    : 1;
+                
+                taskForm.Task.Id = newId;
+
+                // Add the task to the current contact
+                currentContact.Tasks.Add(taskForm.Task);
+
+                // Refresh the tasks display
+                LoadTasksForContact(currentContact);
+
+                MessageBox.Show("Task added successfully!", 
+                    "Success", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
+            }
+        }
+    }
 }
+
 }
