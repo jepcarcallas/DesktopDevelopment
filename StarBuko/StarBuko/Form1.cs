@@ -73,36 +73,12 @@
 
         public DialogResult ShowSizeSelectionPopup(out string size)
         {
-            size = null;
-            var result = MessageBox.Show(
-                "Choose Cup Size:\n\n" +
-                "\tYes for Grande (+20)\n " +
-                "\tNo for Venti (+30)\n " +
-                "\tCancel for Regular",
-                "Select Cup Size",
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Question
-            );
-
-            switch (result)
+            using (var dialog = new SizeSelectionDialog())
             {
-                case DialogResult.Yes:
-                    size = "Grande";
-                    break;
-                case DialogResult.No:
-                    size = "Venti";
-                    break;
-                case DialogResult.Cancel:
-                    size = "Regular";
-                    break;
-                case DialogResult.None:
-                default:
-                    // X button was clicked
-                    size = null;
-                    break;
+                var result = dialog.ShowDialog(this);
+                size = dialog.SelectedSize;
+                return result;
             }
-
-            return result;
         }
 
         private void AddProductToCart(string productName, string priceText)
@@ -110,8 +86,8 @@
             // Show size selection popup
             var result = ShowSizeSelectionPopup(out string size);
             
-            // If user clicked X button (DialogResult.None) or closed the dialog, return without adding to cart
-            if (result == DialogResult.None || size == null)
+            // If user closed the dialog without selecting (X button), return without adding to cart
+            if (size == null)
                 return;
             
             // Parse price (remove ₱ and spaces)

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eAvxZ8VFKwM=",
+  "dgSpecHash": "asS7ml2E1fc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\StarBuko.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\StarBuko.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.24\\microsoft.netcore.app.host.win-x64.8.0.24.nupkg.sha512"
+  ],
   "logs": []
 }

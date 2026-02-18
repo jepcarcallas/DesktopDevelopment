@@ -1,26 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\",
+  "WorkspaceRootPath": "D:\\Acads\\DesktopDevelopment\\StarBuko\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\admin\\desktop\\bjcd\\addu\\2nd year sophomore\\2-a 2nd semester\\ite1\\starbuko\\starbuko\\textboxwithlabel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\textboxwithlabel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\textboxwithlabel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|D:\\Acads\\DesktopDevelopment\\StarBuko\\starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\admin\\desktop\\bjcd\\addu\\2nd year sophomore\\2-a 2nd semester\\ite1\\starbuko\\starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\textboxwithlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|D:\\Acads\\DesktopDevelopment\\StarBuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\admin\\desktop\\bjcd\\addu\\2nd year sophomore\\2-a 2nd semester\\ite1\\starbuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,39 +34,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "SizeSelectionDialog.cs",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\SizeSelectionDialog.cs",
+              "RelativeDocumentMoniker": "StarBuko\\SizeSelectionDialog.cs",
+              "ToolTip": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\SizeSelectionDialog.cs",
+              "RelativeToolTip": "StarBuko\\SizeSelectionDialog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T15:21:55.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TextBoxWithLabel.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.Designer.cs",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.Designer.cs",
               "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.Designer.cs",
-              "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.Designer.cs",
+              "ToolTip": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.Designer.cs",
               "RelativeToolTip": "StarBuko\\TextBoxWithLabel.Designer.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAArwEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T19:46:51.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TextBoxWithLabel.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
-              "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.cs",
-              "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.cs [Design]",
-              "RelativeToolTip": "StarBuko\\TextBoxWithLabel.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T19:46:34.274Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TextBoxWithLabel.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
               "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.cs",
-              "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
+              "ToolTip": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
               "RelativeToolTip": "StarBuko\\TextBoxWithLabel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -70,25 +80,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\Form1.cs",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
-              "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\Form1.cs",
+              "ToolTip": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeToolTip": "StarBuko\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwLoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T18:15:06.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "TextBoxWithLabel.cs [Design]",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
+              "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\TextBoxWithLabel.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T19:46:34.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\Form1.cs",
+              "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\BJCD\\AdDU\\2ND YEAR SOPHOMORE\\2-A 2ND SEMESTER\\ITE1\\StarBuko\\StarBuko\\Form1.cs [Design]",
-              "RelativeToolTip": "StarBuko\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T18:09:44.139Z"
             }

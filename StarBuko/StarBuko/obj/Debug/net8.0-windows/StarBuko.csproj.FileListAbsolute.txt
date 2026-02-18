@@ -16,3 +16,22 @@ C:\Users\admin\Desktop\BJCD\AdDU\2ND YEAR SOPHOMORE\2-A 2ND SEMESTER\ITE1\StarBu
 C:\Users\admin\Desktop\BJCD\AdDU\2ND YEAR SOPHOMORE\2-A 2ND SEMESTER\ITE1\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.pdb
 C:\Users\admin\Desktop\BJCD\AdDU\2ND YEAR SOPHOMORE\2-A 2ND SEMESTER\ITE1\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.genruntimeconfig.cache
 C:\Users\admin\Desktop\BJCD\AdDU\2ND YEAR SOPHOMORE\2-A 2ND SEMESTER\ITE1\StarBuko\StarBuko\obj\Debug\net8.0-windows\ref\StarBuko.dll
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\bin\Debug\net8.0-windows\StarBuko.exe
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\bin\Debug\net8.0-windows\StarBuko.deps.json
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\bin\Debug\net8.0-windows\StarBuko.runtimeconfig.json
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\bin\Debug\net8.0-windows\StarBuko.dll
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\bin\Debug\net8.0-windows\StarBuko.pdb
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.Form1.resources
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.Properties.Resources.resources
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.TextBoxWithLabel.resources
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.csproj.GenerateResource.cache
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.GeneratedMSBuildEditorConfig.editorconfig
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.AssemblyInfoInputs.cache
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.AssemblyInfo.cs
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.csproj.CoreCompileInputs.cache
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.sourcelink.json
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.dll
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\refint\StarBuko.dll
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.pdb
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.genruntimeconfig.cache
+D:\Acads\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\ref\StarBuko.dll
