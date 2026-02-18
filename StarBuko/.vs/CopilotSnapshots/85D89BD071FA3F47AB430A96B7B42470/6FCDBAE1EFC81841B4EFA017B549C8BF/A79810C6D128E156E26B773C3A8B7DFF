@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace StarBuko
+{
+    public partial class TextBoxWithLabel : UserControl
+    {
+        // Create a custom click event
+        public event EventHandler ProductClicked;
+        private DateTime lastClickTime = DateTime.MinValue;
+        private const int ClickDebounceMs = 300;
+
+        public TextBoxWithLabel()
+        {
+            InitializeComponent();
+            
+            // Only subscribe to the UserControl's click event to avoid bubbling
+            this.Click += TextBoxWithLabel_Click;
+        }
+
+        private void TextBoxWithLabel_Click(object sender, EventArgs e)
+        {
+            // Debounce clicks - prevent multiple clicks within 300ms
+            if ((DateTime.Now - lastClickTime).TotalMilliseconds < ClickDebounceMs)
+                return;
+
+            lastClickTime = DateTime.Now;
+            OnProductClicked();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            // Prevent this from triggering separately
+            e.Handled = true;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        protected virtual void OnProductClicked()
+        {
+            ProductClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        public string TextBoxName
+        {
+            get => label2.Text;
+            set => label2.Text = value;
+        }
+
+        public string TextBoxPrice
+        {
+            get => label3.Text;
+            set => label3.Text = value;
+        }
+
+        public Image ProductImage
+        {
+            get => pictureBox1.Image;
+            set => pictureBox1.Image = value;
+        }
+    }
+}
