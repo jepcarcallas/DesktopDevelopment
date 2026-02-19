@@ -54,3 +54,4 @@ C:\Users\jepcarcallas\Desktop\DesktopDevelopment\DesktopDevelopment\StarBuko\Sta
 C:\Users\jepcarcallas\Desktop\DesktopDevelopment\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.pdb
 C:\Users\jepcarcallas\Desktop\DesktopDevelopment\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.genruntimeconfig.cache
 C:\Users\jepcarcallas\Desktop\DesktopDevelopment\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\ref\StarBuko.dll
+C:\Users\jepcarcallas\Desktop\DesktopDevelopment\DesktopDevelopment\StarBuko\StarBuko\obj\Debug\net8.0-windows\StarBuko.SizeSelectionDialog.resources

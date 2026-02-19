@@ -405,7 +405,7 @@
             Controls.Add(label1);
             ForeColor = SystemColors.ControlLightLight;
             Name = "Form1";
-            Text = "Trese Cafe";
+            Text = "StarBuko";
             Load += Form1_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

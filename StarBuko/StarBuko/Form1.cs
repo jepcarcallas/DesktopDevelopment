@@ -83,40 +83,32 @@
 
         private void AddProductToCart(string productName, string priceText)
         {
-            // Show size selection popup
             var result = ShowSizeSelectionPopup(out string size);
 
-            // If user closed the dialog without selecting (X button), return without adding to cart
             if (size == null)
                 return;
 
-            // Parse price (remove ₱ and spaces)
             string cleanPrice = priceText.Replace("₱", "").Trim();
             if (!decimal.TryParse(cleanPrice, out decimal basePrice))
                 return;
 
-            // Add size premium
             decimal priceWithSize = basePrice;
             if (size == "Grande")
                 priceWithSize += 20;
             else if (size == "Venti")
                 priceWithSize += 30;
 
-            // Format product name with size
-            string fullProductName = $"{productName} ({size})";
-
-            // Check if product already exists in cart
             bool productExists = false;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["Column1"].Value != null &&
-                    row.Cells["Column1"].Value.ToString() == fullProductName)
+                    row.Cells["Column1"].Value.ToString() == productName &&
+                    row.Cells["Column3"].Value != null &&
+                    row.Cells["Column3"].Value.ToString() == size)
                 {
-                    // Increment quantity
                     int currentQty = (int)row.Cells["Column2"].Value;
                     row.Cells["Column2"].Value = currentQty + 1;
 
-                    // Recalculate total for this row
                     decimal rowTotal = priceWithSize * (currentQty + 1);
                     row.Cells["Column4"].Value = rowTotal.ToString("F2");
 
@@ -125,11 +117,10 @@
                 }
             }
 
-            // If product doesn't exist, add new row
             if (!productExists)
             {
                 dataGridView1.Rows.Add(
-                    fullProductName,
+                    productName,
                     1,
                     size,
                     priceWithSize.ToString("F2"),
@@ -137,7 +128,6 @@
                 );
             }
 
-            // Update total amount
             UpdateTotalAmount();
         }
 
