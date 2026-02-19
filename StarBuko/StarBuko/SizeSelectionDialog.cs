@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,6 +21,24 @@ namespace StarBuko
             this.FormClosing += SizeSelectionDialog_FormClosing;
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (pictureBox?.Image != null)
+                {
+                    pictureBox.Image.Dispose();
+                    pictureBox.Image = null;
+                }
+                btnYes?.Dispose();
+                btnNo?.Dispose();
+                btnCancel?.Dispose();
+                lblMessage?.Dispose();
+                pictureBox?.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
         private void SizeSelectionDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
             // If form is closing and no button was clicked, it's the X button
@@ -28,6 +46,30 @@ namespace StarBuko
             {
                 SelectedSize = null;
             }
+        }
+
+        private void BtnYes_Click(object sender, EventArgs e)
+        {
+            buttonClicked = true;
+            SelectedSize = "Grande";
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void BtnNo_Click(object sender, EventArgs e)
+        {
+            buttonClicked = true;
+            SelectedSize = "Venti";
+            this.DialogResult = DialogResult.No;
+            this.Close();
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            buttonClicked = true;
+            SelectedSize = "Regular";
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void InitializeComponent()
@@ -59,7 +101,7 @@ namespace StarBuko
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new Size(300, 80);
             this.lblMessage.TabIndex = 1;
-            this.lblMessage.Text = "Choose Cup Size:\n\n\tYes for Grande (+20)\n\tNo for Venti (+30)\n\tCancel for Regular";
+            this.lblMessage.Text = "Choose Cup Size:\n\n\tYes for Grande (+₱20)\n\tNo for Venti (+₱30)\n\tCancel for Regular";
             
             // 
             // btnYes
@@ -70,12 +112,7 @@ namespace StarBuko
             this.btnYes.TabIndex = 2;
             this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = true;
-            this.btnYes.Click += (s, e) => {
-                buttonClicked = true;
-                SelectedSize = "Grande";
-                this.DialogResult = DialogResult.Yes;
-                this.Close();
-            };
+            this.btnYes.Click += BtnYes_Click;
             
             // 
             // btnNo
@@ -86,12 +123,7 @@ namespace StarBuko
             this.btnNo.TabIndex = 3;
             this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = true;
-            this.btnNo.Click += (s, e) => {
-                buttonClicked = true;
-                SelectedSize = "Venti";
-                this.DialogResult = DialogResult.No;
-                this.Close();
-            };
+            this.btnNo.Click += BtnNo_Click;
             
             // 
             // btnCancel
@@ -102,12 +134,7 @@ namespace StarBuko
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += (s, e) => {
-                buttonClicked = true;
-                SelectedSize = "Regular";
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
-            };
+            this.btnCancel.Click += BtnCancel_Click;
             
             // 
             // SizeSelectionDialog

@@ -51,7 +51,7 @@
         private void Form1_Load(object sender, EventArgs e)
         {
             button1.Click += (s, e) => AddNewTransaction();
-            
+
             // Add ProductClicked event handlers for all product boxes
             textBoxWithLabel1.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel1.TextBoxName, textBoxWithLabel1.TextBoxPrice);
             textBoxWithLabel2.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel2.TextBoxName, textBoxWithLabel2.TextBoxPrice);
@@ -61,7 +61,7 @@
             textBoxWithLabel6.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel6.TextBoxName, textBoxWithLabel6.TextBoxPrice);
             textBoxWithLabel7.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel7.TextBoxName, textBoxWithLabel7.TextBoxPrice);
             textBoxWithLabel8.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel8.TextBoxName, textBoxWithLabel8.TextBoxPrice);
-            
+
             // Add text changed event for amount tendered
             textBox1.TextChanged += (s, e) => CalculateChange();
         }
@@ -85,11 +85,11 @@
         {
             // Show size selection popup
             var result = ShowSizeSelectionPopup(out string size);
-            
+
             // If user closed the dialog without selecting (X button), return without adding to cart
             if (size == null)
                 return;
-            
+
             // Parse price (remove ₱ and spaces)
             string cleanPrice = priceText.Replace("₱", "").Trim();
             if (!decimal.TryParse(cleanPrice, out decimal basePrice))
@@ -109,17 +109,17 @@
             bool productExists = false;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["Column1"].Value != null && 
+                if (row.Cells["Column1"].Value != null &&
                     row.Cells["Column1"].Value.ToString() == fullProductName)
                 {
                     // Increment quantity
                     int currentQty = (int)row.Cells["Column2"].Value;
                     row.Cells["Column2"].Value = currentQty + 1;
-                    
+
                     // Recalculate total for this row
                     decimal rowTotal = priceWithSize * (currentQty + 1);
                     row.Cells["Column4"].Value = rowTotal.ToString("F2");
-                    
+
                     productExists = true;
                     break;
                 }
@@ -146,7 +146,7 @@
             totalAmount = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["Column4"].Value != null && 
+                if (row.Cells["Column4"].Value != null &&
                     decimal.TryParse(row.Cells["Column4"].Value.ToString(), out decimal rowTotal))
                 {
                     totalAmount += rowTotal;
@@ -179,6 +179,11 @@
             textBox1.Clear();
             label6.Text = "₱ 0.00";
             totalAmount = 0;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

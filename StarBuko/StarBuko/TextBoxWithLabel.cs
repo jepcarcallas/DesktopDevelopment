@@ -18,6 +18,18 @@ namespace StarBuko
         public TextBoxWithLabel()
         {
             InitializeComponent();
+            
+            // Wire up click events for all child controls
+            pictureBox1.Click += ChildControl_Click;
+            label2.Click += ChildControl_Click;
+            label3.Click += ChildControl_Click;
+            tableLayoutPanel1.Click += ChildControl_Click;
+            tableLayoutPanel2.Click += ChildControl_Click;
+        }
+
+        private void ChildControl_Click(object sender, EventArgs e)
+        {
+            OnProductClicked();
         }
 
         protected override void OnClick(EventArgs e)
@@ -34,7 +46,7 @@ namespace StarBuko
 
         private void label2_Click(object sender, EventArgs e)
         {
-            // Prevent child control from handling the click separately
+            OnProductClicked();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

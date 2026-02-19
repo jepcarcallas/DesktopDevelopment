@@ -42,6 +42,11 @@
             textBoxWithLabel4 = new TextBoxWithLabel();
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             label6 = new Label();
             label5 = new Label();
@@ -51,11 +56,6 @@
             label4 = new Label();
             button1 = new Button();
             label1 = new Label();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -243,6 +243,44 @@
             dataGridView1.Size = new Size(648, 356);
             dataGridView1.TabIndex = 0;
             // 
+            // Column1
+            // 
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(3, 53, 44);
+            Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            Column1.HeaderText = "Product Name";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.False;
+            Column1.Width = 112;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Qty";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 52;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Upsize";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 69;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Price";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 60;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Total Price";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 90;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -353,45 +391,8 @@
             label1.Name = "label1";
             label1.Size = new Size(141, 23);
             label1.TabIndex = 1;
-            label1.Text = "Trese Cafe";
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(3, 53, 44);
-            Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            Column1.HeaderText = "Product Name";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.False;
-            Column1.Width = 112;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Qty";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 52;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Upsize";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 69;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Price";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 60;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Total Price";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 90;
+            label1.Text = "StarBuko";
+            label1.Click += label1_Click;
             // 
             // Form1
             // 

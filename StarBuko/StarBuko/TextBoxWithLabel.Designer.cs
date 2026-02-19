@@ -48,7 +48,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-//            pictureBox1.Click += (s, e) => this.OnMouseClick(e as MouseEventArgs);
             // 
             // tableLayoutPanel1
             // 
@@ -66,7 +65,6 @@
             tableLayoutPanel1.Size = new Size(175, 94);
             tableLayoutPanel1.TabIndex = 4;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
-            tableLayoutPanel1.Click += (s, e) => this.OnMouseClick(e as MouseEventArgs);
             // 
             // label2
             // 
@@ -81,7 +79,7 @@
             label2.TabIndex = 1;
             label2.Text = "Product name";
             label2.TextAlign = ContentAlignment.TopRight;
-            label2.Click += (s, e) => this.OnMouseClick(e as MouseEventArgs);
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -96,7 +94,6 @@
             label3.TabIndex = 2;
             label3.Text = "₱ 0.00";
             label3.TextAlign = ContentAlignment.TopRight;
-            label3.Click += (s, e) => this.OnMouseClick(e as MouseEventArgs);
             // 
             // tableLayoutPanel2
             // 
@@ -110,7 +107,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(94, 94);
             tableLayoutPanel2.TabIndex = 5;
-            tableLayoutPanel2.Click += (s, e) => this.OnMouseClick(e as MouseEventArgs);
             // 
             // TextBoxWithLabel
             // 
