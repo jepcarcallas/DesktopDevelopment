@@ -3,82 +3,32 @@
     public partial class Form1 : Form
     {
         private decimal totalAmount = 0;
-        private List<Product> products;
+        private ProductService productService;
 
         public Form1()
         {
             InitializeComponent();
             
-            InitializeProducts();
+            productService = new ProductService();
             InitializeDataGridView();
             AssignProductsToControls();
         }
 
-        private void InitializeProducts()
-        {
-            products = new List<Product>
-            {
-                new Product 
-                { 
-                    Name = "Creamy Pure Matcha Latte", 
-                    BasePrice = 180.00m,
-                    ProductImage = Properties.Resources.matcha_latte
-                },
-                new Product 
-                { 
-                    Name = "XOXO Frappuccino", 
-                    BasePrice = 150.00m,
-                    ProductImage = Properties.Resources.xoxo_frappucino
-                },
-                new Product 
-                { 
-                    Name = "Strawberry Açaí with Lemonade", 
-                    BasePrice = 160.00m,
-                    ProductImage = Properties.Resources.strawberry_acai
-                },
-                new Product 
-                { 
-                    Name = "Pink Drink with Strawberry Açaí", 
-                    BasePrice = 165.00m,
-                    ProductImage = Properties.Resources.pink_drink
-                },
-                new Product 
-                { 
-                    Name = "Dragon Drink with Mango Dragonfruit", 
-                    BasePrice = 170.00m,
-                    ProductImage = Properties.Resources.dragon_drink
-                },
-                new Product 
-                { 
-                    Name = "Strawberries Cream Frappuccino", 
-                    BasePrice = 175.00m,
-                    ProductImage = Properties.Resources.strawberries_cream
-                },
-                new Product 
-                { 
-                    Name = "Chocolate Chip Cream Frappuccino", 
-                    BasePrice = 180.00m,
-                    ProductImage = Properties.Resources.chocolate_chip
-                },
-                new Product 
-                { 
-                    Name = "Dark Caramel Coffee Frappuccino", 
-                    BasePrice = 170.00m,
-                    ProductImage = Properties.Resources.dark_caramel_frappucino
-                }
-            };
-        }
-
         private void AssignProductsToControls()
         {
-            textBoxWithLabel1.Product = products[0];
-            textBoxWithLabel2.Product = products[1];
-            textBoxWithLabel3.Product = products[2];
-            textBoxWithLabel4.Product = products[3];
-            textBoxWithLabel5.Product = products[4];
-            textBoxWithLabel6.Product = products[5];
-            textBoxWithLabel7.Product = products[6];
-            textBoxWithLabel8.Product = products[7];
+            var products = productService.GetAllProducts();
+            
+            if (products.Count >= 8)
+            {
+                textBoxWithLabel1.Product = products[0];
+                textBoxWithLabel2.Product = products[1];
+                textBoxWithLabel3.Product = products[2];
+                textBoxWithLabel4.Product = products[3];
+                textBoxWithLabel5.Product = products[4];
+                textBoxWithLabel6.Product = products[5];
+                textBoxWithLabel7.Product = products[6];
+                textBoxWithLabel8.Product = products[7];
+            }
         }
 
         private void InitializeDataGridView()

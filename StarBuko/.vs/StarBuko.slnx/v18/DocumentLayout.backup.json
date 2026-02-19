@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|c:\\users\\jepcarcallas\\desktop\\desktopdevelopment\\desktopdevelopment\\starbuko\\starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -54,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
-              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
-              "RelativeToolTip": "StarBuko\\Form1.cs",
-              "ViewState": "AgIAANQAAAAAAAAAAAAUwAQAAAAoAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs*",
+              "RelativeToolTip": "StarBuko\\Form1.cs*",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAuwAQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T18:15:06.636Z",
               "IsPinned": true,
@@ -72,12 +72,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
-              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs [Design]",
-              "RelativeToolTip": "StarBuko\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs [Design]*",
+              "RelativeToolTip": "StarBuko\\Form1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T18:09:44.139Z",
               "IsPinned": true,
@@ -89,12 +89,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.Designer.cs",
-              "RelativeToolTip": "StarBuko\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.Designer.cs*",
+              "RelativeToolTip": "StarBuko\\Form1.Designer.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T08:01:36.743Z",
@@ -140,13 +140,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Product.cs",
               "RelativeDocumentMoniker": "StarBuko\\Product.cs",
               "ToolTip": "C:\\Users\\jepcarcallas\\Desktop\\DesktopDevelopment\\DesktopDevelopment\\StarBuko\\StarBuko\\Product.cs",
               "RelativeToolTip": "StarBuko\\Product.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA6wBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvxoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T07:43:27.365Z",
               "EditorCaption": ""
