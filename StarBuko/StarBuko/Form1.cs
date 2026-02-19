@@ -3,10 +3,86 @@
     public partial class Form1 : Form
     {
         private decimal totalAmount = 0;
+        private List<Product> products;
 
         public Form1()
         {
             InitializeComponent();
+            
+            InitializeProducts();
+            InitializeDataGridView();
+            AssignProductsToControls();
+        }
+
+        private void InitializeProducts()
+        {
+            products = new List<Product>
+            {
+                new Product 
+                { 
+                    Name = "Creamy Pure Matcha Latte", 
+                    BasePrice = 180.00m,
+                    ProductImage = Properties.Resources.matcha_latte
+                },
+                new Product 
+                { 
+                    Name = "XOXO Frappuccino", 
+                    BasePrice = 150.00m,
+                    ProductImage = Properties.Resources.xoxo_frappucino
+                },
+                new Product 
+                { 
+                    Name = "Strawberry Açaí with Lemonade", 
+                    BasePrice = 160.00m,
+                    ProductImage = Properties.Resources.strawberry_acai
+                },
+                new Product 
+                { 
+                    Name = "Pink Drink with Strawberry Açaí", 
+                    BasePrice = 165.00m,
+                    ProductImage = Properties.Resources.pink_drink
+                },
+                new Product 
+                { 
+                    Name = "Dragon Drink with Mango Dragonfruit", 
+                    BasePrice = 170.00m,
+                    ProductImage = Properties.Resources.dragon_drink
+                },
+                new Product 
+                { 
+                    Name = "Strawberries Cream Frappuccino", 
+                    BasePrice = 175.00m,
+                    ProductImage = Properties.Resources.strawberries_cream
+                },
+                new Product 
+                { 
+                    Name = "Chocolate Chip Cream Frappuccino", 
+                    BasePrice = 180.00m,
+                    ProductImage = Properties.Resources.chocolate_chip
+                },
+                new Product 
+                { 
+                    Name = "Dark Caramel Coffee Frappuccino", 
+                    BasePrice = 170.00m,
+                    ProductImage = Properties.Resources.dark_caramel_frappucino
+                }
+            };
+        }
+
+        private void AssignProductsToControls()
+        {
+            textBoxWithLabel1.Product = products[0];
+            textBoxWithLabel2.Product = products[1];
+            textBoxWithLabel3.Product = products[2];
+            textBoxWithLabel4.Product = products[3];
+            textBoxWithLabel5.Product = products[4];
+            textBoxWithLabel6.Product = products[5];
+            textBoxWithLabel7.Product = products[6];
+            textBoxWithLabel8.Product = products[7];
+        }
+
+        private void InitializeDataGridView()
+        {
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -19,11 +95,9 @@
             dataGridView1.ColumnHeadersDefaultCellStyle.Font =
                 new Font("Segoe UI", 9, FontStyle.Bold);
 
-            // Set default cell style for data rows to black text
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.DefaultCellStyle.BackColor = Color.White;
 
-            // If columns already exist:
             if (dataGridView1.Columns.Contains("Qty"))
                 dataGridView1.Columns["Qty"].DefaultCellStyle.Alignment =
                     DataGridViewContentAlignment.MiddleCenter;
@@ -52,17 +126,15 @@
         {
             button1.Click += (s, e) => AddNewTransaction();
 
-            // Add ProductClicked event handlers for all product boxes
-            textBoxWithLabel1.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel1.TextBoxName, textBoxWithLabel1.TextBoxPrice);
-            textBoxWithLabel2.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel2.TextBoxName, textBoxWithLabel2.TextBoxPrice);
-            textBoxWithLabel3.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel3.TextBoxName, textBoxWithLabel3.TextBoxPrice);
-            textBoxWithLabel4.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel4.TextBoxName, textBoxWithLabel4.TextBoxPrice);
-            textBoxWithLabel5.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel5.TextBoxName, textBoxWithLabel5.TextBoxPrice);
-            textBoxWithLabel6.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel6.TextBoxName, textBoxWithLabel6.TextBoxPrice);
-            textBoxWithLabel7.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel7.TextBoxName, textBoxWithLabel7.TextBoxPrice);
-            textBoxWithLabel8.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel8.TextBoxName, textBoxWithLabel8.TextBoxPrice);
+            textBoxWithLabel1.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel1.Product);
+            textBoxWithLabel2.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel2.Product);
+            textBoxWithLabel3.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel3.Product);
+            textBoxWithLabel4.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel4.Product);
+            textBoxWithLabel5.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel5.Product);
+            textBoxWithLabel6.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel6.Product);
+            textBoxWithLabel7.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel7.Product);
+            textBoxWithLabel8.ProductClicked += (s, e) => AddProductToCart(textBoxWithLabel8.Product);
 
-            // Add text changed event for amount tendered
             textBox1.TextChanged += (s, e) => CalculateChange();
         }
 
@@ -81,30 +153,25 @@
             }
         }
 
-        private void AddProductToCart(string productName, string priceText)
+        private void AddProductToCart(Product product)
         {
+            if (product == null)
+                return;
+
             var result = ShowSizeSelectionPopup(out string size);
 
             if (size == null)
                 return;
 
-            string cleanPrice = priceText.Replace("₱", "").Trim();
-            if (!decimal.TryParse(cleanPrice, out decimal basePrice))
-                return;
-
-            decimal priceWithSize = basePrice;
-            if (size == "Grande")
-                priceWithSize += 20;
-            else if (size == "Venti")
-                priceWithSize += 30;
+            decimal priceWithSize = product.GetPriceForSize(size);
 
             bool productExists = false;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["Column1"].Value != null &&
-                    row.Cells["Column1"].Value.ToString() == productName &&
-                    row.Cells["Column3"].Value != null &&
-                    row.Cells["Column3"].Value.ToString() == size)
+                    row.Cells["Column1"].Value.ToString() == product.Name &&
+                    row.Cells["Column5"].Value != null &&
+                    row.Cells["Column5"].Value.ToString() == size)
                 {
                     int currentQty = (int)row.Cells["Column2"].Value;
                     row.Cells["Column2"].Value = currentQty + 1;
@@ -120,7 +187,7 @@
             if (!productExists)
             {
                 dataGridView1.Rows.Add(
-                    productName,
+                    product.Name,
                     1,
                     size,
                     priceWithSize.ToString("F2"),

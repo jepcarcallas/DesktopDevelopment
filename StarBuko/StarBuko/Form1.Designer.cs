@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Product product1 = new Product();
+            Product product2 = new Product();
+            Product product3 = new Product();
+            Product product4 = new Product();
+            Product product5 = new Product();
+            Product product6 = new Product();
+            Product product7 = new Product();
+            Product product8 = new Product();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
@@ -113,9 +121,14 @@
             // 
             textBoxWithLabel8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel8.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel8.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel8.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel8.Location = new Point(250, 300);
             textBoxWithLabel8.Name = "textBoxWithLabel8";
+            product1.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product1.Name = null;
+            product1.ProductImage = Properties.Resources.dark_caramel_frappucino;
+            textBoxWithLabel8.Product = product1;
             textBoxWithLabel8.ProductImage = Properties.Resources.dark_caramel_frappucino;
             textBoxWithLabel8.Size = new Size(241, 94);
             textBoxWithLabel8.TabIndex = 7;
@@ -126,9 +139,14 @@
             // 
             textBoxWithLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel3.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel3.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel3.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel3.Location = new Point(3, 100);
             textBoxWithLabel3.Name = "textBoxWithLabel3";
+            product2.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product2.Name = null;
+            product2.ProductImage = Properties.Resources.strawberry_acai;
+            textBoxWithLabel3.Product = product2;
             textBoxWithLabel3.ProductImage = Properties.Resources.strawberry_acai;
             textBoxWithLabel3.Size = new Size(241, 93);
             textBoxWithLabel3.TabIndex = 2;
@@ -139,9 +157,14 @@
             // 
             textBoxWithLabel7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel7.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel7.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel7.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel7.Location = new Point(3, 300);
             textBoxWithLabel7.Name = "textBoxWithLabel7";
+            product3.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product3.Name = null;
+            product3.ProductImage = Properties.Resources.chocolate_chip;
+            textBoxWithLabel7.Product = product3;
             textBoxWithLabel7.ProductImage = Properties.Resources.chocolate_chip;
             textBoxWithLabel7.Size = new Size(241, 94);
             textBoxWithLabel7.TabIndex = 6;
@@ -152,9 +175,14 @@
             // 
             textBoxWithLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel1.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel1.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel1.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel1.Location = new Point(3, 3);
             textBoxWithLabel1.Name = "textBoxWithLabel1";
+            product4.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product4.Name = null;
+            product4.ProductImage = Properties.Resources.matcha_latte;
+            textBoxWithLabel1.Product = product4;
             textBoxWithLabel1.ProductImage = Properties.Resources.matcha_latte;
             textBoxWithLabel1.Size = new Size(241, 91);
             textBoxWithLabel1.TabIndex = 0;
@@ -165,9 +193,14 @@
             // 
             textBoxWithLabel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel6.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel6.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel6.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel6.Location = new Point(250, 199);
             textBoxWithLabel6.Name = "textBoxWithLabel6";
+            product5.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product5.Name = null;
+            product5.ProductImage = Properties.Resources.strawberries_cream;
+            textBoxWithLabel6.Product = product5;
             textBoxWithLabel6.ProductImage = Properties.Resources.strawberries_cream;
             textBoxWithLabel6.Size = new Size(241, 94);
             textBoxWithLabel6.TabIndex = 5;
@@ -178,9 +211,14 @@
             // 
             textBoxWithLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel2.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel2.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel2.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel2.Location = new Point(250, 3);
             textBoxWithLabel2.Name = "textBoxWithLabel2";
+            product6.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product6.Name = null;
+            product6.ProductImage = Properties.Resources.xoxo_frappucino;
+            textBoxWithLabel2.Product = product6;
             textBoxWithLabel2.ProductImage = Properties.Resources.xoxo_frappucino;
             textBoxWithLabel2.Size = new Size(241, 91);
             textBoxWithLabel2.TabIndex = 1;
@@ -191,9 +229,14 @@
             // 
             textBoxWithLabel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel5.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel5.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel5.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel5.Location = new Point(3, 199);
             textBoxWithLabel5.Name = "textBoxWithLabel5";
+            product7.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product7.Name = null;
+            product7.ProductImage = Properties.Resources.dragon_drink;
+            textBoxWithLabel5.Product = product7;
             textBoxWithLabel5.ProductImage = Properties.Resources.dragon_drink;
             textBoxWithLabel5.Size = new Size(241, 94);
             textBoxWithLabel5.TabIndex = 4;
@@ -204,9 +247,14 @@
             // 
             textBoxWithLabel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxWithLabel4.BackColor = Color.FromArgb(3, 53, 44);
+            textBoxWithLabel4.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
             textBoxWithLabel4.BorderStyle = BorderStyle.FixedSingle;
             textBoxWithLabel4.Location = new Point(250, 100);
             textBoxWithLabel4.Name = "textBoxWithLabel4";
+            product8.BasePrice = new decimal(new int[] { 0, 0, 0, 0 });
+            product8.Name = null;
+            product8.ProductImage = Properties.Resources.pink_drink;
+            textBoxWithLabel4.Product = product8;
             textBoxWithLabel4.ProductImage = Properties.Resources.pink_drink;
             textBoxWithLabel4.Size = new Size(241, 93);
             textBoxWithLabel4.TabIndex = 3;

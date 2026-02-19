@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StarBuko")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee74b8ca956b64cc92456968d26a232f1dcd95bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+490cc8fff1a49ae64de98244a4eee8e6898e4840")]
 [assembly: System.Reflection.AssemblyProductAttribute("StarBuko")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StarBuko")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

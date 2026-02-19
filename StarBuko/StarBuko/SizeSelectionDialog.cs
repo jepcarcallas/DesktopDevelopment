@@ -11,7 +11,7 @@ namespace StarBuko
         private Button btnCancel;
         private Label lblMessage;
         private PictureBox pictureBox;
-        
+
         public string SelectedSize { get; private set; }
         private bool buttonClicked = false;
 
@@ -74,85 +74,85 @@ namespace StarBuko
 
         private void InitializeComponent()
         {
-            this.btnYes = new Button();
-            this.btnNo = new Button();
-            this.btnCancel = new Button();
-            this.lblMessage = new Label();
-            this.pictureBox = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.SuspendLayout();
-            
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new Point(12, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new Size(32, 32);
-            this.pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Image = SystemIcons.Question.ToBitmap();
-            
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = false;
-            this.lblMessage.Location = new Point(60, 12);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new Size(300, 80);
-            this.lblMessage.TabIndex = 1;
-            this.lblMessage.Text = "Choose Cup Size:\n\n\tYes for Grande (+₱20)\n\tNo for Venti (+₱30)\n\tCancel for Regular";
-            
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SizeSelectionDialog));
+            btnYes = new Button();
+            btnNo = new Button();
+            btnCancel = new Button();
+            lblMessage = new Label();
+            pictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            SuspendLayout();
             // 
             // btnYes
             // 
-            this.btnYes.Location = new Point(84, 105);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new Size(75, 23);
-            this.btnYes.TabIndex = 2;
-            this.btnYes.Text = "Yes";
-            this.btnYes.UseVisualStyleBackColor = true;
-            this.btnYes.Click += BtnYes_Click;
-            
+            btnYes.Location = new Point(84, 105);
+            btnYes.Name = "btnYes";
+            btnYes.Size = new Size(75, 23);
+            btnYes.TabIndex = 2;
+            btnYes.Text = "Yes";
+            btnYes.UseVisualStyleBackColor = true;
+            btnYes.Click += BtnYes_Click;
             // 
             // btnNo
             // 
-            this.btnNo.Location = new Point(165, 105);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new Size(75, 23);
-            this.btnNo.TabIndex = 3;
-            this.btnNo.Text = "No";
-            this.btnNo.UseVisualStyleBackColor = true;
-            this.btnNo.Click += BtnNo_Click;
-            
+            btnNo.Location = new Point(165, 105);
+            btnNo.Name = "btnNo";
+            btnNo.Size = new Size(75, 23);
+            btnNo.TabIndex = 3;
+            btnNo.Text = "No";
+            btnNo.UseVisualStyleBackColor = true;
+            btnNo.Click += BtnNo_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new Point(246, 105);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new Size(75, 23);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += BtnCancel_Click;
-            
+            btnCancel.Location = new Point(246, 105);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 4;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += BtnCancel_Click;
+            // 
+            // lblMessage
+            // 
+            lblMessage.Location = new Point(60, 12);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(300, 80);
+            lblMessage.TabIndex = 1;
+            lblMessage.Text = "Choose Cup Size:\n\n\tYes for Grande (+₱20)\n\tNo for Venti (+₱30)\n\tCancel for Regular";
+            lblMessage.Click += lblMessage_Click;
+            // 
+            // pictureBox
+            // 
+            pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
+            pictureBox.Location = new Point(12, 12);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(32, 32);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.TabIndex = 0;
+            pictureBox.TabStop = false;
             // 
             // SizeSelectionDialog
             // 
-            this.ClientSize = new Size(380, 145);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnNo);
-            this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.pictureBox);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SizeSelectionDialog";
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "Select Cup Size";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.ResumeLayout(false);
+            ClientSize = new Size(380, 145);
+            Controls.Add(btnCancel);
+            Controls.Add(btnNo);
+            Controls.Add(btnYes);
+            Controls.Add(lblMessage);
+            Controls.Add(pictureBox);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SizeSelectionDialog";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Select Cup Size";
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            ResumeLayout(false);
+        }
+
+        private void lblMessage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
