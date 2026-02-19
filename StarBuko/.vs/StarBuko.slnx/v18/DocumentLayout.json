@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Acads\\DesktopDevelopment\\StarBuko\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|D:\\Acads\\DesktopDevelopment\\StarBuko\\starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|d:\\acads\\desktopdevelopment\\starbuko\\starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34709C6D-1C7C-B602-B43E-803598F85380}|StarBuko\\StarBuko.csproj|solutionrelative:starbuko\\sizeselectiondialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "SizeSelectionDialog.cs",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\SizeSelectionDialog.cs",
               "RelativeDocumentMoniker": "StarBuko\\SizeSelectionDialog.cs",
               "ToolTip": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\SizeSelectionDialog.cs",
               "RelativeToolTip": "StarBuko\\SizeSelectionDialog.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAABBwIMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAASwIMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:21:55.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TextBoxWithLabel.Designer.cs",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.Designer.cs",
               "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.Designer.cs",
@@ -68,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TextBoxWithLabel.cs",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
               "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.cs",
@@ -80,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TextBoxWithLabel.cs [Design]",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\TextBoxWithLabel.cs",
               "RelativeDocumentMoniker": "StarBuko\\TextBoxWithLabel.cs",
@@ -103,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\Acads\\DesktopDevelopment\\StarBuko\\StarBuko\\Form1.cs",
               "RelativeDocumentMoniker": "StarBuko\\Form1.cs",
